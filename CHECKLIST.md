@@ -1,6 +1,6 @@
 # ✅ Pre-Deployment Checklist
 
-Use this checklist to ensure everything is ready before deploying your AI Study Assistant.
+Use this checklist to ensure everything is ready before deploying the AI Study Assistant.
 
 ## 📋 Initial Setup
 
