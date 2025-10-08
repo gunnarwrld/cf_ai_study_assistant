@@ -1,0 +1,27 @@
+name = "cf-ai-study-assistant"
+main = "worker/index.js"
+compatibility_date = "2024-01-01"
+
+# Durable Objects binding for StudyAgent
+[[durable_objects.bindings]]
+name = "STUDY_AGENT"
+class_name = "StudyAgent"
+script_name = "cf-ai-study-assistant"
+
+# Durable Object migrations
+[[migrations]]
+tag = "v1"
+new_classes = ["StudyAgent"]
+
+# Workers AI binding
+[ai]
+binding = "AI"
+
+# KV namespace for storing additional data (optional)
+[[kv_namespaces]]
+binding = "KV"
+id = "placeholder_id" # Replace with actual KV namespace ID after creation
+
+# Environment variables (add your API keys if using external services)
+[vars]
+ENVIRONMENT = "development"

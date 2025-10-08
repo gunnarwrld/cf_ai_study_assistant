@@ -1,0 +1,10 @@
+# Example environment variables for local development
+# Copy this file to .dev.vars and update with your values
+
+# Optional: OpenAI API key if you want to use OpenAI as fallback
+# OPENAI_API_KEY=sk-your-api-key-here
+
+# Optional: Custom settings
+# MAX_HISTORY_MESSAGES=50
+# AI_TEMPERATURE=0.7
+# AI_MAX_TOKENS=1024

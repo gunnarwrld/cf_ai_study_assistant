@@ -1,0 +1,37 @@
+{
+  "name": "cf-ai-study-assistant",
+  "version": "1.0.0",
+  "description": "AI-powered study assistant built on Cloudflare Workers with Agents SDK",
+  "main": "worker/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "pages:dev": "wrangler pages dev frontend",
+    "pages:deploy": "wrangler pages deploy frontend --project-name=cf-ai-study-assistant",
+    "tail": "wrangler tail",
+    "test": "echo \"Testing not yet implemented\" && exit 0"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "ai",
+    "study-assistant",
+    "chatbot",
+    "durable-objects",
+    "workers-ai",
+    "llama",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "agents": "^0.1.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
