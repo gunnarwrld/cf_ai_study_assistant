@@ -16,18 +16,21 @@ An intelligent study assistant built on Cloudflare's edge infrastructure, powere
 ## 🏗️ Architecture
 
 ### Backend Stack
+
 - **Cloudflare Workers**: Serverless compute at the edge
 - **Durable Objects**: Stateful, persistent user sessions
 - **Workers AI**: Llama 3.3 model for intelligent responses
 - **WebSockets**: Real-time bidirectional communication
 
 ### Frontend Stack
+
 - **Vanilla JavaScript**: Lightweight, fast-loading UI
 - **Cloudflare Pages**: Static site hosting
 - **WebSocket Client**: Real-time chat interface
 - **Local Storage**: Session persistence
 
 ### Project Structure
+
 ```
 cf-ai-study-assistant/
 ├── worker/
@@ -57,16 +60,19 @@ cf-ai-study-assistant/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    cd "c:\Users\GUAR0009\OneDrive - Högskolan Kristianstad\HKR\SideProyects\Cloudflare AI"
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Authenticate with Cloudflare**
+
    ```bash
    wrangler login
    ```
@@ -80,14 +86,17 @@ cf-ai-study-assistant/
 ### Local Development
 
 1. **Start the Worker locally**
+
    ```bash
    npm run dev
    ```
+
    This starts the Worker at `http://localhost:8787`
 
 2. **Serve the frontend**
-   
+
    Open `frontend/index.html` in your browser, or use a local server:
+
    ```bash
    cd frontend
    npx serve .
@@ -95,33 +104,38 @@ cf-ai-study-assistant/
 
 3. **Update the Worker URL** in `frontend/app.js`:
    ```javascript
-   const WORKER_URL = 'http://localhost:8787';
+   const WORKER_URL = "http://localhost:8787";
    ```
 
 ### Deployment
 
 1. **Deploy the Worker**
+
    ```bash
    npm run deploy
    ```
-   
+
    This will output your Worker URL, e.g., `https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev`
 
 2. **Update frontend configuration**
-   
+
    In `frontend/app.js`, update:
+
    ```javascript
-   const WORKER_URL = 'https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev';
+   const WORKER_URL =
+     "https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev";
    ```
 
 3. **Deploy to Cloudflare Pages**
-   
+
    Option A: Via Wrangler
+
    ```bash
    npm run pages:deploy
    ```
 
    Option B: Via Dashboard
+
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
    - Navigate to Pages
    - Create a new project
@@ -158,6 +172,7 @@ MAX_HISTORY_MESSAGES = "50"
 ```
 
 Or use secrets for sensitive data:
+
 ```bash
 wrangler secret put OPENAI_API_KEY
 ```
@@ -166,19 +181,20 @@ wrangler secret put OPENAI_API_KEY
 
 ### REST API
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/chat` | POST | Send a chat message |
-| `/api/history` | GET | Get chat history |
-| `/api/history` | DELETE | Clear chat history |
-| `/api/search?q=query` | GET | Search chat history |
-| `/health` | GET | Health check |
+| Endpoint              | Method | Description         |
+| --------------------- | ------ | ------------------- |
+| `/api/chat`           | POST   | Send a chat message |
+| `/api/history`        | GET    | Get chat history    |
+| `/api/history`        | DELETE | Clear chat history  |
+| `/api/search?q=query` | GET    | Search chat history |
+| `/health`             | GET    | Health check        |
 
 ### WebSocket
 
 Connect to `/api/chat?sessionId=YOUR_SESSION_ID` for real-time communication.
 
 **Message Types:**
+
 ```javascript
 // Send a chat message
 {
@@ -202,35 +218,40 @@ Connect to `/api/chat?sessionId=YOUR_SESSION_ID` for real-time communication.
 ## 🎯 Usage Examples
 
 ### Basic Chat
+
 ```javascript
 // Send a message
-const response = await fetch('YOUR_WORKER_URL/api/chat?sessionId=SESSION_ID', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ message: 'Explain quantum physics' })
+const response = await fetch("YOUR_WORKER_URL/api/chat?sessionId=SESSION_ID", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message: "Explain quantum physics" }),
 });
 ```
 
 ### WebSocket Chat
+
 ```javascript
-const ws = new WebSocket('wss://YOUR_WORKER_URL/api/chat?sessionId=SESSION_ID');
+const ws = new WebSocket("wss://YOUR_WORKER_URL/api/chat?sessionId=SESSION_ID");
 
 ws.onopen = () => {
-  ws.send(JSON.stringify({
-    type: 'chat',
-    message: 'What is machine learning?'
-  }));
+  ws.send(
+    JSON.stringify({
+      type: "chat",
+      message: "What is machine learning?",
+    })
+  );
 };
 
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
-  console.log('AI Response:', data.response);
+  console.log("AI Response:", data.response);
 };
 ```
 
 ## 🧪 Testing
 
 Test the Worker locally:
+
 ```bash
 # Test health endpoint
 curl http://localhost:8787/health
@@ -264,28 +285,34 @@ curl -X POST http://localhost:8787/api/chat?sessionId=test123 \
 ### Change AI Model
 
 In `worker/study-agent.js`, modify the model:
+
 ```javascript
-const response = await this.env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast', {
-  // Or use other models:
-  // '@cf/meta/llama-3.1-8b-instruct'
-  // '@cf/mistral/mistral-7b-instruct-v0.1'
-  messages: aiMessages
-});
+const response = await this.env.AI.run(
+  "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  {
+    // Or use other models:
+    // '@cf/meta/llama-3.1-8b-instruct'
+    // '@cf/mistral/mistral-7b-instruct-v0.1'
+    messages: aiMessages,
+  }
+);
 ```
 
 ### Adjust System Prompt
 
 Customize the AI's behavior in `prepareAIContext()`:
+
 ```javascript
 const systemPrompt = {
-  role: 'system',
-  content: 'Your custom instructions here...'
+  role: "system",
+  content: "Your custom instructions here...",
 };
 ```
 
 ### Modify UI Theme
 
 Edit CSS variables in `frontend/styles.css`:
+
 ```css
 :root {
   --primary-color: #your-color;
@@ -296,16 +323,19 @@ Edit CSS variables in `frontend/styles.css`:
 ## 🐛 Troubleshooting
 
 ### WebSocket Connection Issues
+
 - Ensure your Worker URL supports WebSocket upgrades
 - Check browser console for connection errors
 - Verify CORS settings in `worker/index.js`
 
 ### Durable Object Errors
+
 - Confirm migrations are applied: check `wrangler.toml`
 - Ensure proper binding name: `STUDY_AGENT`
 - Check Durable Objects are enabled in your Cloudflare account
 
 ### Workers AI Issues
+
 - Verify AI binding in `wrangler.toml`
 - Check model name is correct
 - Ensure Workers AI is enabled for your account
@@ -321,6 +351,7 @@ Edit CSS variables in `frontend/styles.css`:
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
+
 - Report bugs
 - Suggest features
 - Submit pull requests
@@ -341,7 +372,7 @@ This project fulfills the AI-powered study assistant requirements:
 ✅ Persistent chat memory  
 ✅ Search functionality  
 ✅ Comprehensive documentation  
-✅ Example prompts in PROMPTS.md  
+✅ Example prompts in PROMPTS.md
 
 ---
 

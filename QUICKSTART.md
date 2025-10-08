@@ -34,6 +34,7 @@ npx serve .
 ## Step 5: Deploy to Production
 
 Deploy the Worker:
+
 ```bash
 npm run deploy
 ```
@@ -43,8 +44,9 @@ You'll get a URL like: `https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev
 ## Step 6: Update Frontend URL
 
 Edit `frontend/app.js` and replace:
+
 ```javascript
-const WORKER_URL = 'https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev';
+const WORKER_URL = "https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev";
 ```
 
 ## Step 7: Deploy Frontend to Pages
@@ -66,11 +68,13 @@ Your AI Study Assistant is now live!
 ## Quick Test Commands
 
 Test health:
+
 ```bash
 curl https://YOUR_WORKER_URL/health
 ```
 
 Test chat:
+
 ```bash
 curl -X POST https://YOUR_WORKER_URL/api/chat?sessionId=test123 \
   -H "Content-Type: application/json" \

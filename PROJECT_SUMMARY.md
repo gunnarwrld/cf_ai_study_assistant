@@ -3,6 +3,7 @@
 ## AI-Powered Study Assistant on Cloudflare
 
 ### Project Overview
+
 A fully functional AI-powered study assistant built on Cloudflare's edge infrastructure, featuring real-time chat, persistent memory, and intelligent responses powered by Llama 3.3.
 
 ---
@@ -42,6 +43,7 @@ cf-ai-study-assistant/
 ## 🎯 Key Features Implemented
 
 ### ✅ Backend Features
+
 - **Cloudflare Workers**: Global edge deployment
 - **Durable Objects**: Stateful session management
 - **Workers AI Integration**: Llama 3.3 for intelligent responses
@@ -53,6 +55,7 @@ cf-ai-study-assistant/
 - **CORS Support**: Cross-origin requests enabled
 
 ### ✅ Frontend Features
+
 - **Modern UI**: Clean, responsive design
 - **Real-time Chat**: WebSocket-powered messaging
 - **Message History**: Display past conversations
@@ -68,6 +71,7 @@ cf-ai-study-assistant/
 ## 🏗️ Technical Architecture
 
 ### Backend Stack
+
 ```
 ┌─────────────────────────────────────┐
 │     Cloudflare Global Network       │
@@ -103,6 +107,7 @@ cf-ai-study-assistant/
 ```
 
 ### Frontend Stack
+
 ```
 ┌─────────────────────────────────────┐
 │     Cloudflare Pages                │
@@ -137,17 +142,18 @@ cf-ai-study-assistant/
 
 ### REST Endpoints
 
-| Endpoint | Method | Description | Parameters |
-|----------|--------|-------------|------------|
-| `/health` | GET | Health check | None |
-| `/api/chat` | POST | Send message | `sessionId`, `message` |
-| `/api/history` | GET | Get history | `sessionId`, `limit` |
-| `/api/history` | DELETE | Clear history | `sessionId` |
-| `/api/search` | GET | Search history | `sessionId`, `q` |
+| Endpoint       | Method | Description    | Parameters             |
+| -------------- | ------ | -------------- | ---------------------- |
+| `/health`      | GET    | Health check   | None                   |
+| `/api/chat`    | POST   | Send message   | `sessionId`, `message` |
+| `/api/history` | GET    | Get history    | `sessionId`, `limit`   |
+| `/api/history` | DELETE | Clear history  | `sessionId`            |
+| `/api/search`  | GET    | Search history | `sessionId`, `q`       |
 
 ### WebSocket Messages
 
 **Sent to server:**
+
 ```javascript
 {
   "type": "chat|getHistory|search",
@@ -158,6 +164,7 @@ cf-ai-study-assistant/
 ```
 
 **Received from server:**
+
 ```javascript
 {
   "type": "response|history|searchResults|error",
@@ -174,11 +181,13 @@ cf-ai-study-assistant/
 ## 🚀 Deployment Instructions
 
 ### Prerequisites
+
 1. Node.js v16+
 2. Cloudflare account
 3. Wrangler CLI installed
 
 ### Local Development
+
 ```bash
 npm install
 wrangler login
@@ -186,6 +195,7 @@ npm run dev
 ```
 
 ### Production Deployment
+
 ```bash
 npm run deploy
 npm run pages:deploy
@@ -196,12 +206,14 @@ npm run pages:deploy
 ## 📊 Resource Usage
 
 ### Cloudflare Free Tier Limits
+
 - **Workers**: 100,000 requests/day
 - **Durable Objects**: 1,000 requests/day
 - **Workers AI**: 30 requests/min
 - **Pages**: Unlimited static requests
 
 ### Estimated Usage Per Session
+
 - **Storage**: ~10 KB per session (50 messages)
 - **Compute**: ~5 ms per request
 - **AI Inference**: ~500-1000ms per response
@@ -211,6 +223,7 @@ npm run pages:deploy
 ## 🎓 Assignment Requirements Coverage
 
 ### ✅ Technical Requirements
+
 - [x] Backend on Cloudflare Workers
 - [x] AI Model: Llama 3.3 via Workers AI
 - [x] Workflow & State: Durable Objects
@@ -221,6 +234,7 @@ npm run pages:deploy
 - [x] State management: Built-in & persistent
 
 ### ✅ Feature Requirements
+
 - [x] Chat functionality
 - [x] Message history storage
 - [x] Memory/recall feature
@@ -229,6 +243,7 @@ npm run pages:deploy
 - [x] Background processing support
 
 ### ✅ Documentation
+
 - [x] README.md with setup instructions
 - [x] PROMPTS.md with examples
 - [x] Architecture documentation
@@ -236,6 +251,7 @@ npm run pages:deploy
 - [x] Testing documentation
 
 ### ✅ Repository Structure
+
 - [x] `frontend/` folder
 - [x] `worker/` folder
 - [x] Proper configuration files
@@ -246,6 +262,7 @@ npm run pages:deploy
 ## 🔒 Security & Privacy
 
 ### Implemented Security Measures
+
 - **Session Isolation**: Each user has isolated Durable Object
 - **CORS Protection**: Configured cross-origin policies
 - **Input Validation**: Message validation before processing
@@ -258,6 +275,7 @@ npm run pages:deploy
 ## 📈 Performance Metrics
 
 ### Expected Performance
+
 - **Latency**: < 50ms (global edge)
 - **AI Response**: 500-1500ms (model dependent)
 - **Concurrent Users**: Scales automatically
@@ -268,6 +286,7 @@ npm run pages:deploy
 ## 🛠️ Customization Options
 
 ### Easy to Modify
+
 1. **AI Model**: Change in `study-agent.js`
 2. **System Prompt**: Customize AI behavior
 3. **UI Theme**: Update CSS variables
@@ -275,6 +294,7 @@ npm run pages:deploy
 5. **Session Duration**: Configure in Durable Object
 
 ### Extension Ideas
+
 - Add user authentication
 - Implement voice input
 - Add file upload support
@@ -289,6 +309,7 @@ npm run pages:deploy
 ## 📚 Learning Outcomes
 
 ### Technologies Mastered
+
 - Cloudflare Workers development
 - Durable Objects state management
 - Workers AI integration
@@ -303,6 +324,7 @@ npm run pages:deploy
 ## 🎉 What You've Built
 
 A production-ready, globally distributed AI study assistant that:
+
 - Responds to questions instantly from anywhere in the world
 - Remembers conversations across sessions
 - Provides intelligent, context-aware answers

@@ -5,11 +5,13 @@
 ### 1. Health Check
 
 Test the Worker is running:
+
 ```bash
 curl http://localhost:8787/health
 ```
 
 Expected response:
+
 ```json
 {
   "status": "ok",
@@ -20,6 +22,7 @@ Expected response:
 ### 2. REST API Testing
 
 #### Send a Chat Message
+
 ```bash
 curl -X POST http://localhost:8787/api/chat?sessionId=test123 \
   -H "Content-Type: application/json" \
@@ -27,16 +30,19 @@ curl -X POST http://localhost:8787/api/chat?sessionId=test123 \
 ```
 
 #### Get Chat History
+
 ```bash
 curl http://localhost:8787/api/history?sessionId=test123&limit=10
 ```
 
 #### Search History
+
 ```bash
 curl "http://localhost:8787/api/search?sessionId=test123&q=photosynthesis"
 ```
 
 #### Clear History
+
 ```bash
 curl -X DELETE http://localhost:8787/api/history?sessionId=test123
 ```
@@ -48,52 +54,58 @@ Create a test HTML file:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>WebSocket Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>WebSocket Test</h1>
     <div id="status">Connecting...</div>
     <div id="messages"></div>
-    <input type="text" id="input" placeholder="Type message...">
+    <input type="text" id="input" placeholder="Type message..." />
     <button onclick="send()">Send</button>
 
     <script>
-        const ws = new WebSocket('ws://localhost:8787/api/chat?sessionId=test123');
-        
-        ws.onopen = () => {
-            document.getElementById('status').textContent = 'Connected';
-        };
+      const ws = new WebSocket(
+        "ws://localhost:8787/api/chat?sessionId=test123"
+      );
 
-        ws.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            const div = document.createElement('div');
-            div.textContent = JSON.stringify(data, null, 2);
-            document.getElementById('messages').appendChild(div);
-        };
+      ws.onopen = () => {
+        document.getElementById("status").textContent = "Connected";
+      };
 
-        function send() {
-            const input = document.getElementById('input');
-            ws.send(JSON.stringify({
-                type: 'chat',
-                message: input.value
-            }));
-            input.value = '';
-        }
+      ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        const div = document.createElement("div");
+        div.textContent = JSON.stringify(data, null, 2);
+        document.getElementById("messages").appendChild(div);
+      };
+
+      function send() {
+        const input = document.getElementById("input");
+        ws.send(
+          JSON.stringify({
+            type: "chat",
+            message: input.value,
+          })
+        );
+        input.value = "";
+      }
     </script>
-</body>
+  </body>
 </html>
 ```
 
 ## Test Scenarios
 
 ### Scenario 1: Basic Chat Flow
+
 1. Send a message: "What is AI?"
 2. Verify response is received
 3. Send follow-up: "Give me an example"
 4. Verify context is maintained
 
 ### Scenario 2: Memory & History
+
 1. Send multiple messages
 2. Get chat history
 3. Verify all messages are stored
@@ -101,18 +113,21 @@ Create a test HTML file:
 5. Verify search results are correct
 
 ### Scenario 3: Session Isolation
+
 1. Create session A and send messages
 2. Create session B and send different messages
 3. Get history for session A
 4. Verify session A history doesn't contain session B messages
 
 ### Scenario 4: Clear History
+
 1. Send several messages
 2. Clear history
 3. Get history
 4. Verify history is empty
 
 ### Scenario 5: WebSocket Connection
+
 1. Connect via WebSocket
 2. Send multiple messages
 3. Verify real-time responses
@@ -124,6 +139,7 @@ Create a test HTML file:
 ### Load Testing with curl
 
 Test concurrent requests:
+
 ```bash
 for i in {1..10}; do
   curl -X POST http://localhost:8787/api/chat?sessionId=load-test-$i \
@@ -144,6 +160,7 @@ time curl -X POST http://localhost:8787/api/chat?sessionId=perf-test \
 ## Edge Cases
 
 ### Test Long Messages
+
 ```bash
 curl -X POST http://localhost:8787/api/chat?sessionId=edge-test \
   -H "Content-Type: application/json" \
@@ -151,6 +168,7 @@ curl -X POST http://localhost:8787/api/chat?sessionId=edge-test \
 ```
 
 ### Test Special Characters
+
 ```bash
 curl -X POST http://localhost:8787/api/chat?sessionId=edge-test \
   -H "Content-Type: application/json" \
@@ -158,6 +176,7 @@ curl -X POST http://localhost:8787/api/chat?sessionId=edge-test \
 ```
 
 ### Test Empty Message
+
 ```bash
 curl -X POST http://localhost:8787/api/chat?sessionId=edge-test \
   -H "Content-Type: application/json" \
@@ -173,13 +192,16 @@ Open browser console and run:
 ```javascript
 // Test REST API
 async function testChat() {
-  const response = await fetch('http://localhost:8787/api/chat?sessionId=console-test', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: 'Hello from console!' })
-  });
+  const response = await fetch(
+    "http://localhost:8787/api/chat?sessionId=console-test",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: "Hello from console!" }),
+    }
+  );
   const data = await response.json();
-  console.log('Response:', data);
+  console.log("Response:", data);
 }
 
 testChat();
@@ -187,18 +209,20 @@ testChat();
 
 ```javascript
 // Test WebSocket
-const ws = new WebSocket('ws://localhost:8787/api/chat?sessionId=ws-test');
+const ws = new WebSocket("ws://localhost:8787/api/chat?sessionId=ws-test");
 
 ws.onopen = () => {
-  console.log('Connected');
-  ws.send(JSON.stringify({
-    type: 'chat',
-    message: 'Hello via WebSocket!'
-  }));
+  console.log("Connected");
+  ws.send(
+    JSON.stringify({
+      type: "chat",
+      message: "Hello via WebSocket!",
+    })
+  );
 };
 
 ws.onmessage = (event) => {
-  console.log('Received:', JSON.parse(event.data));
+  console.log("Received:", JSON.parse(event.data));
 };
 ```
 
@@ -229,6 +253,7 @@ wrangler tail
 ### Monitor Durable Objects
 
 Check Cloudflare Dashboard:
+
 1. Go to Workers & Pages
 2. Click on your worker
 3. Navigate to Durable Objects
@@ -237,6 +262,7 @@ Check Cloudflare Dashboard:
 ### Check Analytics
 
 In Cloudflare Dashboard:
+
 - Request count
 - Error rate
 - Latency
@@ -258,21 +284,25 @@ In Cloudflare Dashboard:
 ## Common Issues
 
 ### "Durable Object not found"
+
 - Check `wrangler.toml` bindings
 - Verify migrations are applied
 - Ensure class name matches
 
 ### "AI model error"
+
 - Check Workers AI is enabled
 - Verify model name is correct
 - Check account has AI access
 
 ### "WebSocket upgrade failed"
+
 - Verify WebSocket support in Worker
 - Check CORS settings
 - Ensure correct protocol (ws/wss)
 
 ### "No response from AI"
+
 - Check AI binding in wrangler.toml
 - Verify request format
 - Check Worker logs

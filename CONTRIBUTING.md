@@ -69,6 +69,7 @@ refactor: optimize AI prompt handling
 ```
 
 **Prefix types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -80,23 +81,27 @@ refactor: optimize AI prompt handling
 ## 🔧 Pull Request Process
 
 1. **Update your fork**
+
    ```bash
    git fetch upstream
    git merge upstream/main
    ```
 
 2. **Push your changes**
+
    ```bash
    git push origin feature/your-feature-name
    ```
 
 3. **Create Pull Request**
+
    - Go to GitHub and create a PR
    - Fill out the PR template
    - Link related issues
    - Describe your changes clearly
 
 4. **Code Review**
+
    - Address review comments
    - Update code as needed
    - Keep discussion professional
@@ -121,6 +126,7 @@ A clear description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce:
+
 1. Go to '...'
 2. Click on '....'
 3. See error
@@ -132,6 +138,7 @@ What you expected to happen.
 If applicable, add screenshots.
 
 **Environment:**
+
 - OS: [e.g., Windows 11]
 - Browser: [e.g., Chrome 120]
 - Node version: [e.g., 18.0.0]
@@ -164,6 +171,7 @@ Any other context or screenshots.
 Documentation is just as important as code!
 
 **Ways to help:**
+
 - Fix typos
 - Improve clarity
 - Add examples
@@ -183,6 +191,7 @@ Documentation is just as important as code!
 **Do NOT** create public issues for security vulnerabilities.
 
 Instead:
+
 - Email directly (if email provided)
 - Use GitHub Security Advisories
 - Describe the vulnerability clearly
@@ -209,6 +218,7 @@ Instead:
 ## 🏆 Recognition
 
 Contributors will be:
+
 - Listed in README.md
 - Mentioned in release notes
 - Credited in documentation
@@ -223,21 +233,25 @@ Contributors will be:
 ## 🎓 Learning Resources
 
 ### Cloudflare
+
 - [Workers Docs](https://developers.cloudflare.com/workers/)
 - [Durable Objects](https://developers.cloudflare.com/durable-objects/)
 - [Workers AI](https://developers.cloudflare.com/workers-ai/)
 
 ### JavaScript
+
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [JavaScript.info](https://javascript.info/)
 
 ### Git & GitHub
+
 - [Git Handbook](https://guides.github.com/)
 - [GitHub Flow](https://guides.github.com/introduction/flow/)
 
 ## 🚀 Deployment
 
 After your PR is merged:
+
 1. Changes will be reviewed
 2. Tested in staging
 3. Deployed to production

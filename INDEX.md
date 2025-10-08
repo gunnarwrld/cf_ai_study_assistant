@@ -4,24 +4,26 @@ Welcome to the AI Study Assistant documentation! This index helps you find what 
 
 ## 🚀 Quick Links
 
-| What do you want to do? | Read this |
-|-------------------------|-----------|
-| **Get started quickly** | [QUICKSTART.md](QUICKSTART.md) |
-| **Understand the project** | [README.md](README.md) |
-| **See example prompts** | [PROMPTS.md](PROMPTS.md) |
-| **Test the application** | [TESTING.md](TESTING.md) |
-| **Deploy to production** | [CHECKLIST.md](CHECKLIST.md) |
-| **Contribute to project** | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| **Technical overview** | [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) |
+| What do you want to do?    | Read this                                |
+| -------------------------- | ---------------------------------------- |
+| **Get started quickly**    | [QUICKSTART.md](QUICKSTART.md)           |
+| **Understand the project** | [README.md](README.md)                   |
+| **See example prompts**    | [PROMPTS.md](PROMPTS.md)                 |
+| **Test the application**   | [TESTING.md](TESTING.md)                 |
+| **Deploy to production**   | [CHECKLIST.md](CHECKLIST.md)             |
+| **Contribute to project**  | [CONTRIBUTING.md](CONTRIBUTING.md)       |
+| **Technical overview**     | [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) |
 
 ---
 
 ## 📚 Documentation Files
 
 ### 🎯 [README.md](README.md)
+
 **Main project documentation**
 
 Contains:
+
 - Project overview and features
 - Complete architecture explanation
 - Installation and setup instructions
@@ -36,9 +38,11 @@ Contains:
 ---
 
 ### ⚡ [QUICKSTART.md](QUICKSTART.md)
+
 **Get up and running in 5 minutes**
 
 Contains:
+
 - Quick installation steps
 - Local development setup
 - Fast deployment guide
@@ -50,9 +54,11 @@ Contains:
 ---
 
 ### 💬 [PROMPTS.md](PROMPTS.md)
+
 **Example prompts and use cases**
 
 Contains:
+
 - Study question examples
 - Subject-specific prompts
 - Memory and context examples
@@ -66,9 +72,11 @@ Contains:
 ---
 
 ### 🧪 [TESTING.md](TESTING.md)
+
 **Comprehensive testing guide**
 
 Contains:
+
 - Manual testing procedures
 - REST API testing
 - WebSocket testing
@@ -84,9 +92,11 @@ Contains:
 ---
 
 ### ✅ [CHECKLIST.md](CHECKLIST.md)
+
 **Pre-deployment checklist**
 
 Contains:
+
 - Setup checklist
 - Configuration checklist
 - Testing checklist
@@ -101,9 +111,11 @@ Contains:
 ---
 
 ### 🤝 [CONTRIBUTING.md](CONTRIBUTING.md)
+
 **Contribution guidelines**
 
 Contains:
+
 - How to contribute
 - Development workflow
 - Code style guidelines
@@ -118,9 +130,11 @@ Contains:
 ---
 
 ### 📊 [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)
+
 **Technical project summary**
 
 Contains:
+
 - Complete file structure
 - Architecture diagrams
 - Technical stack details
@@ -138,32 +152,42 @@ Contains:
 ## 🛠️ Configuration Files
 
 ### 📝 [package.json](package.json)
+
 **Node.js project configuration**
+
 - Dependencies
 - Scripts
 - Project metadata
 
 ### ⚙️ [wrangler.toml](wrangler.toml)
+
 **Cloudflare Worker configuration**
+
 - Worker settings
 - Durable Objects bindings
 - Workers AI configuration
 - Environment variables
 
 ### 🚫 [.gitignore](.gitignore)
+
 **Git ignore rules**
+
 - Excludes node_modules
 - Excludes build artifacts
 - Excludes sensitive files
 
 ### 🔐 [.dev.vars.example](.dev.vars.example)
+
 **Environment variables template**
+
 - Example configuration
 - Optional API keys
 - Custom settings
 
 ### 📜 [LICENSE](LICENSE)
+
 **MIT License**
+
 - Project license terms
 - Usage permissions
 
@@ -174,14 +198,18 @@ Contains:
 ### Backend (worker/)
 
 #### [worker/index.js](worker/index.js)
+
 **Main Worker entry point**
+
 - Request routing
 - CORS handling
 - Session management
 - Durable Object creation
 
 #### [worker/study-agent.js](worker/study-agent.js)
+
 **Durable Object implementation**
+
 - Agent class extending Agents SDK
 - AI integration with Llama 3.3
 - Chat history management
@@ -191,21 +219,27 @@ Contains:
 ### Frontend (frontend/)
 
 #### [frontend/index.html](frontend/index.html)
+
 **Chat interface HTML**
+
 - Main UI structure
 - Chat container
 - Input controls
 - Search panel
 
 #### [frontend/styles.css](frontend/styles.css)
+
 **Application styling**
+
 - Responsive design
 - Animations
 - Theme variables
 - Mobile optimization
 
 #### [frontend/app.js](frontend/app.js)
+
 **Frontend JavaScript**
+
 - WebSocket client
 - REST API calls
 - UI event handlers
@@ -217,14 +251,18 @@ Contains:
 ## 🎯 Helper Scripts
 
 ### 🪟 [dev-helper.bat](dev-helper.bat)
+
 **Windows development helper**
+
 - Interactive menu
 - Common tasks
 - Easy deployment
 - Testing shortcuts
 
 ### 🐧 [dev-helper.sh](dev-helper.sh)
+
 **Linux/Mac development helper**
+
 - Interactive menu
 - Common tasks
 - Easy deployment
@@ -235,18 +273,21 @@ Contains:
 ## 📋 Recommended Reading Order
 
 ### For First-Time Users
+
 1. **README.md** - Understand what the project is
 2. **QUICKSTART.md** - Get it running locally
 3. **PROMPTS.md** - Learn how to use it
 4. **CHECKLIST.md** - Deploy to production
 
 ### For Developers
+
 1. **README.md** - Project overview
 2. **PROJECT_SUMMARY.md** - Technical architecture
 3. **TESTING.md** - Testing procedures
 4. **CONTRIBUTING.md** - Development guidelines
 
 ### For Assignment Submission
+
 1. **CHECKLIST.md** - Verify everything is complete
 2. **README.md** - Final review
 3. **PROMPTS.md** - Understand use cases
@@ -257,36 +298,43 @@ Contains:
 ## 🔍 Find Information By Topic
 
 ### Setup & Installation
+
 - README.md (Installation section)
 - QUICKSTART.md (All steps)
 - CHECKLIST.md (Setup checklist)
 
 ### Deployment
+
 - README.md (Deployment section)
 - QUICKSTART.md (Steps 5-7)
 - CHECKLIST.md (Deployment checklist)
 
 ### Testing
+
 - TESTING.md (Complete testing guide)
 - CHECKLIST.md (Testing checklist)
 - README.md (Usage examples)
 
 ### API Documentation
+
 - README.md (API Endpoints section)
 - PROJECT_SUMMARY.md (API Documentation)
 - worker/index.js (Code implementation)
 
 ### Customization
+
 - README.md (Customization section)
 - PROJECT_SUMMARY.md (Extension ideas)
 - Source code files
 
 ### Troubleshooting
+
 - README.md (Troubleshooting section)
 - TESTING.md (Debugging checklist)
 - CHECKLIST.md (Common issues)
 
 ### Contributing
+
 - CONTRIBUTING.md (Complete guide)
 - PROJECT_SUMMARY.md (Architecture)
 - README.md (Project overview)

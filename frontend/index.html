@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Study Assistant - Cloudflare</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>🎓 AI Study Assistant</h1>
-            <p class="subtitle">Powered by Cloudflare Workers AI & Llama 3.3</p>
-        </header>
+      <header>
+        <h1>🎓 AI Study Assistant</h1>
+        <p class="subtitle">Powered by Cloudflare Workers AI & Llama 3.3</p>
+      </header>
 
-        <div class="controls">
-            <button id="clearBtn" class="btn btn-secondary">🗑️ Clear Chat</button>
-            <button id="historyBtn" class="btn btn-secondary">📜 View History</button>
-            <button id="searchBtn" class="btn btn-secondary">🔍 Search</button>
-            <div class="status">
-                <span id="connectionStatus" class="status-dot offline"></span>
-                <span id="statusText">Disconnected</span>
+      <div class="controls">
+        <button id="clearBtn" class="btn btn-secondary">🗑️ Clear Chat</button>
+        <button id="historyBtn" class="btn btn-secondary">
+          📜 View History
+        </button>
+        <button id="searchBtn" class="btn btn-secondary">🔍 Search</button>
+        <div class="status">
+          <span id="connectionStatus" class="status-dot offline"></span>
+          <span id="statusText">Disconnected</span>
+        </div>
+      </div>
+
+      <div id="searchPanel" class="search-panel hidden">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search in chat history..."
+        />
+        <button id="searchSubmitBtn" class="btn">Search</button>
+        <button id="closeSearchBtn" class="btn btn-secondary">Close</button>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <div id="chatContainer" class="chat-container">
+        <div id="messages" class="messages">
+          <div class="message assistant">
+            <div class="message-content">
+              <strong>Assistant:</strong> Hello! I'm your AI study assistant.
+              I'm here to help you learn, understand complex topics, and answer
+              your questions. What would you like to study today?
             </div>
+            <div class="message-time">Just now</div>
+          </div>
         </div>
+      </div>
 
-        <div id="searchPanel" class="search-panel hidden">
-            <input type="text" id="searchInput" placeholder="Search in chat history...">
-            <button id="searchSubmitBtn" class="btn">Search</button>
-            <button id="closeSearchBtn" class="btn btn-secondary">Close</button>
-            <div id="searchResults" class="search-results"></div>
-        </div>
-
-        <div id="chatContainer" class="chat-container">
-            <div id="messages" class="messages">
-                <div class="message assistant">
-                    <div class="message-content">
-                        <strong>Assistant:</strong> Hello! I'm your AI study assistant. I'm here to help you learn, understand complex topics, and answer your questions. What would you like to study today?
-                    </div>
-                    <div class="message-time">Just now</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="input-container">
-            <textarea 
-                id="messageInput" 
-                placeholder="Ask me anything... (Press Enter to send, Shift+Enter for new line)"
-                rows="1"
-            ></textarea>
-            <button id="sendBtn" class="btn btn-primary">Send</button>
-        </div>
+      <div class="input-container">
+        <textarea
+          id="messageInput"
+          placeholder="Ask me anything... (Press Enter to send, Shift+Enter for new line)"
+          rows="1"
+        ></textarea>
+        <button id="sendBtn" class="btn btn-primary">Send</button>
+      </div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

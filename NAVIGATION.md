@@ -259,3 +259,4 @@ Or on Windows, just double-click:
 
 Good luck with your project! 🎉
 You've got everything you need! 🌟
+```
