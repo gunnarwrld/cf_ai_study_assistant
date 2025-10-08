@@ -5,6 +5,7 @@ This document contains the prompts and conversation I had with AI during the dev
 ### All documentation files (including README.md and PROMPTS.md) were created with AI assistance
 
 ### Promps for General Purpose Learning
+
 ```
 "How do I call Llama 3.3 from a Cloudflare Worker with async/await in TypeScript?"
 

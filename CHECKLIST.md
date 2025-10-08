@@ -34,6 +34,7 @@ Use this checklist to ensure everything is ready before deploying the AI Study A
 ## 🚀 Production Deployment
 
 ### Backend (Worker)
+
 - [ ] Run `npm run deploy`
 - [ ] Note your Worker URL (e.g., `https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev`)
 - [ ] Test deployed worker health endpoint
@@ -41,6 +42,7 @@ Use this checklist to ensure everything is ready before deploying the AI Study A
 - [ ] Check Workers AI is enabled in your account
 
 ### Frontend (Pages)
+
 - [ ] Update `WORKER_URL` in `frontend/app.js` with your deployed Worker URL
 - [ ] Replace `YOUR_SUBDOMAIN` with actual subdomain
 - [ ] Ensure WebSocket URL uses `wss://` (not `ws://`)
