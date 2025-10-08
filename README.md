@@ -347,6 +347,7 @@ Edit CSS variables in `frontend/styles.css`:
 - [Workers AI Documentation](https://developers.cloudflare.com/workers-ai/)
 - [Agents SDK](https://developers.cloudflare.com/agents/)
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/)
+- [Cloudflare Chat Agent Starter Kid GitHub Repo]([https://developers.cloudflare.com/pages/](https://github.com/cloudflare/agents-starter?tab=readme-ov-file))
 
 ## 🤝 Contributing
 
