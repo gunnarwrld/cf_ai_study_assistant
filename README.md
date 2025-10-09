@@ -376,15 +376,6 @@ npm run pages:deploy
 - [Workers Documentation](https://developers.cloudflare.com/workers/)
 - [Durable Objects Guide](https://developers.cloudflare.com/durable-objects/)
 - [Workers AI Documentation](https://developers.cloudflare.com/workers-ai/)
-- [WebSocket API](https://developers.cloudflare.com/workers/runtime-apis/websockets/)
-- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
-
-### Support
-
-- **GitHub Issues**: [Report bugs or request features](https://github.com/gunnarwrld/cf_ai_study_assistant/issues)
-- **Cloudflare Community**: [Discord](https://discord.cloudflare.com)
-
----
 
 ## 🤝 Contributing
 
@@ -415,7 +406,6 @@ This AI-powered study assistant was built as a learning project to demonstrate:
 - AI integration using Workers AI (Llama 3.3)
 - Full-stack development without traditional servers
 
-**Project developed at:** Högskolan Kristianstad  
 **Built by:** [gunnarwrld](https://github.com/gunnarwrld)
 
 ---
