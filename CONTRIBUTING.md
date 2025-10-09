@@ -282,5 +282,3 @@ cf-ai-study-assistant/
 ## 🙏 Thank You!
 
 Every contribution makes this project better. Whether you're fixing a typo or adding a major feature, your help is appreciated!
-
-**Happy Contributing! 🎉**

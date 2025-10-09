@@ -1,5 +1,5 @@
 // Configuration
-const WORKER_URL =
+const WORKER_URL = 'https://cf-ai-study-assistant.gunnarwrld.workers.dev/'
   window.location.hostname === "localhost"
     ? "http://localhost:8787"
     : "https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev";

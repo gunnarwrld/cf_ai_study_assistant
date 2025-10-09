@@ -1,7 +1,7 @@
 {
   "name": "cf-ai-study-assistant",
   "version": "1.0.0",
-  "description": "AI-powered study assistant built on Cloudflare Workers with Agents SDK",
+  "description": "AI-powered study assistant built on Cloudflare Workers with Durable Objects",
   "main": "worker/index.js",
   "type": "module",
   "scripts": {
@@ -25,9 +25,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "agents": "^0.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "wrangler": "^3.80.0"
   },

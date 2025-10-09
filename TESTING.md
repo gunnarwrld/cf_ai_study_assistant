@@ -254,6 +254,30 @@ wrangler tail
 
 Check Cloudflare Dashboard:
 
+- Navigate to Workers & Pages > Durable Objects
+- View active instances
+- Monitor CPU time and requests
+- Check error rates
+
+### Analytics
+
+- View metrics in Cloudflare Dashboard
+- Monitor request volume
+- Track error rates
+- Analyze response times
+
+---
+
+## 📚 Additional Resources
+
+- **[PROMPTS.md](./PROMPTS.md)** - AI prompts used during development
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Technical architecture details
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** - Contribution guidelines
+
+---
+
+**Happy Testing! 🚀**
+
 1. Go to Workers & Pages
 2. Click on your worker
 3. Navigate to Durable Objects

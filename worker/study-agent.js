@@ -1,12 +1,9 @@
-import { Agent } from "agents";
-
 /**
  * StudyAgent - A Durable Object that manages individual user study sessions
- * Extends the Agent class for built-in state management, scheduling, and AI capabilities
+ * Provides built-in state management, scheduling, and AI capabilities
  */
-export class StudyAgent extends Agent {
+export class StudyAgent {
   constructor(state, env) {
-    super(state, env);
     this.state = state;
     this.env = env;
   }
