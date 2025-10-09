@@ -1,8 +1,8 @@
 // Configuration
-const WORKER_URL = 'https://cf-ai-study-assistant.gunnarwrld.workers.dev/'
+const WORKER_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:8787"
-    : "https://cf-ai-study-assistant.YOUR_SUBDOMAIN.workers.dev";
+    : "https://cf-ai-study-assistant.gunnarwrld.workers.dev";
 
 // State
 let sessionId = localStorage.getItem("sessionId") || generateSessionId();
