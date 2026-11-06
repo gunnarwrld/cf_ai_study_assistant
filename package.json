@@ -10,7 +10,7 @@
     "pages:dev": "wrangler pages dev frontend",
     "pages:deploy": "wrangler pages deploy frontend --project-name=cf-ai-study-assistant",
     "tail": "wrangler tail",
-    "test": "echo \"Testing not yet implemented\" && exit 0"
+    "test": "echo \"No automated tests yet. Use the manual checklist in TESTING.md.\" && exit 1"
   },
   "keywords": [
     "cloudflare",
