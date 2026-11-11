@@ -3,6 +3,11 @@ main = "worker/index.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
+# Serve the static frontend from the same Worker. Requests that match a file in
+# ./frontend get the file; everything else (/health, /api/*, WebSockets) runs the Worker.
+[assets]
+directory = "./frontend"
+
 # Durable Objects binding for StudyAgent
 [[durable_objects.bindings]]
 name = "STUDY_AGENT"

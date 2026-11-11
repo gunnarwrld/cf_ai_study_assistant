@@ -4,7 +4,7 @@
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gunnarwrld/cf_ai_study_assistant)
 
-**🔗 Live Demo:** [cf-ai-study-assistant.pages.dev](https://cf-ai-study-assistant.pages.dev)
+**🔗 Live Demo:** [cf-ai-study-assistant.gunnarwrld.workers.dev](https://cf-ai-study-assistant.gunnarwrld.workers.dev)
 
 ---
 
